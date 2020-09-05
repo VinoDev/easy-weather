@@ -1,28 +1,33 @@
 console.log("Client side js is loaded!");
 
+const mainContent = document.querySelector('.main-content');
 const weatherForm = document.querySelector('form');
 const search = document.querySelector('input');
-const upperMessage = document.querySelector('.upper-message');
-const lowerMessage = document.querySelector('.lower-message');
+const message = document.querySelector('.message');
 
 weatherForm.addEventListener("submit", (e)=>{
     e.preventDefault();
     
     const location = search.value;
+    let ul = document.querySelector('ul');
+    if(ul)
+        ul.remove();
 
-    upperMessage.textContent = "Checking the weather..."
-    lowerMessage.textContent = "";
+    message.textContent = "Checking the weather..."
 
     fetch('/weather?address=' + location).then((response)=>{
         response.json().then((data) => {
+            console.log(data);
             if(data.error) {
-                upperMessage.textContent = data.error;
+                message.textContent = data.error;
             } else {
-                const lowerCaseWeatherDesc = data.weatherDescriptions[0].toLowerCase();
-                upperMessage.textContent = data.location;
-                lowerMessage.textContent = 
-                    `The weather is ${lowerCaseWeatherDesc}, 
-                    the temperature is ${data.temperature} and if feels like ${data.feelsLike}.`;
+                const modifiedDataArr = [
+                    data.weatherDescriptions[0], 
+                    `Temperature ${data.temperature}°C`, 
+                    `Feels like ${data.feelsLike}°C`
+                ];
+                message.textContent = data.location;
+                mainContent.appendChild(makeUL(modifiedDataArr));
             }
         });
     })

@@ -36,15 +36,10 @@ app.get('/about', (req, res) => {
 })
 
 app.get('/help', (req, res) => {
-    res.render('about', {
-        title: "Help",
-        author: "Oleg Vinokurov"
-    });
-})
-
-app.get('/help', (req, res) => {
     res.render('help', {
-        message: "To get help, send an email to yolps11@gmail.com"
+        title: "Help",
+        message: "",
+        author: "Oleg Vinokurov"
     });
 })
 
