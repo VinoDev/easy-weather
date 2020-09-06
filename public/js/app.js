@@ -17,14 +17,14 @@ weatherForm.addEventListener("submit", (e)=>{
 
     fetch('/weather?address=' + location).then((response)=>{
         response.json().then((data) => {
-            console.log(data);
             if(data.error) {
                 message.textContent = data.error;
             } else {
                 const modifiedDataArr = [
                     data.weatherDescriptions[0], 
                     `Temperature ${data.temperature}°C`, 
-                    `Feels like ${data.feelsLike}°C`
+                    `Feels like ${data.feelsLike}°C`,
+                    `Humidity is ${data.humidity}%`
                 ];
                 message.textContent = data.location;
                 mainContent.appendChild(makeUL(modifiedDataArr));
