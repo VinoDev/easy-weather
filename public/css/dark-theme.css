@@ -1,0 +1,18 @@
+body.dark-theme {
+    background: #121212;
+    color: white;
+}
+
+    body.dark-theme footer {
+        color: #666666;
+        border-top: 2px solid #222222;
+    }
+
+    body.dark-theme button {
+        background: #888888;
+        border: 1px solid #444444;
+    }
+
+    body.dark-theme header a {
+        color: #aaaaaa;
+    }
