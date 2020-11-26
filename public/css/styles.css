@@ -50,9 +50,64 @@ button {
     user-select: none;
 }
 
+.section-btn-toggle{
+    display: flex;
+    align-items: center;
+}
+
+.section-btn-toggle label{
+    color: #888888;
+    margin-right: 10px;
+}
+
+.btn-toggle-dark{
+    display: flex;
+    border-radius: 9999px;
+    height: 32px;
+    width: 64px;
+    background-color: rgba(0, 0, 0, .1);
+    border: 1px solid rgba(0, 0, 0, .3);
+}
+
+.btn-toggle-dark-on{
+    background-color: #357edd;
+    border: 1px solid #357edd;
+    justify-content: flex-end;
+}
+
+.circle{
+    border-radius: 9999px;
+    width: 32px;
+    background-color: #FFF;   
+}
+
 footer {
     color: #888888;
     border-top: 2px solid #eeeeee;
     margin-top: 16px;
     padding: 16px 0;
+}
+
+@media (max-width: 768px){
+    .section-btn-toggle label{
+        max-width: 40px;
+        margin-right: 5px;
+    }
+}
+
+@media (max-width: 345px){
+    .btn-toggle-dark{
+        height: 16px;
+        width: 32px;
+    }
+
+    .circle{
+        width: 16px;
+    }
+
+    .section-btn-toggle label{
+        font-size: 12px;
+        max-width: 30px;
+        margin-right: 5px;
+    }
 }
