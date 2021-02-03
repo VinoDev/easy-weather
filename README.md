@@ -15,16 +15,11 @@ npm install
 This project uses [weatherstack](https://weatherstack.com/) and [mapbox](https://www.mapbox.com/) API's
 
 ## Local env
-
-Set up your local environment by simply creating 'config.js' with your API keys.
-
-```js
-const keys = {
-    weatherStack:"****",
-    mapbox:"****"
-}
-
-module.exports = keys;
+Sign up to weatherstack and mapbox to get your own API keys.
+Set up your local environment by simply creating 'config' directory, inside the directory create 'dev.env' file with these variables:
+```env
+MAPBOX_KEY=****
+WEATHERSTACK_KEY=****
 ```
 
 Run locally on your machine
