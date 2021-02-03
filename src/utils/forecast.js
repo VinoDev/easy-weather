@@ -1,10 +1,7 @@
 const request = require('postman-request');
-const localKey = require('../../config').weatherStack;
-
-const key = process.env.WEATHERSTACK_KEY || localKey;
 
 const forecast = (longtitude, latitude, location, callback) => {
-    const url = `http://api.weatherstack.com/current?access_key=${key}&query=${longtitude},${latitude}`;
+    const url = `http://api.weatherstack.com/current?access_key=${process.env.WEATHERSTACK_KEY}&query=${longtitude},${latitude}`;
 
     request({url, json: true}, (error, {body})=>{
         if(error) {
