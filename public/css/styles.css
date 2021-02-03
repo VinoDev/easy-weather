@@ -63,11 +63,16 @@ button {
 .btn-toggle-dark{
     display: flex;
     border-radius: 9999px;
-    height: 32px;
-    width: 64px;
+    height: 16px;
+    width: 32px;
     background-color: rgba(0, 0, 0, .1);
     border: 1px solid rgba(0, 0, 0, .3);
 }
+
+.btn-toggle-dark:hover{
+    cursor: pointer;
+}
+
 
 .btn-toggle-dark-on{
     background-color: #357edd;
@@ -77,7 +82,7 @@ button {
 
 .circle{
     border-radius: 9999px;
-    width: 32px;
+    width: 16px;
     background-color: #FFF;   
 }
 
@@ -88,26 +93,16 @@ footer {
     padding: 16px 0;
 }
 
-@media (max-width: 768px){
-    .section-btn-toggle label{
-        max-width: 40px;
-        margin-right: 5px;
-    }
-}
-
 @media (max-width: 345px){
-    .btn-toggle-dark{
-        height: 16px;
-        width: 32px;
-    }
-
-    .circle{
-        width: 16px;
-    }
-
     .section-btn-toggle label{
         font-size: 12px;
         max-width: 30px;
-        margin-right: 5px;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 768px){
+    .section-btn-toggle label{
+        max-width: 40px;
     }
 }
